@@ -17,11 +17,17 @@
 
     .mag-hero.home h1 { font-size: 4.5rem; }
 
+    .mag-hero-photo-wrap {
+      border: 2px solid #2a2a2a;
+      padding: 8px;
+      background: #ffffff;
+      display: inline-block;
+    }
+
     .mag-hero-photo {
       width: 200px;
       height: 200px;
       object-fit: cover;
-      border: 3px solid #2a2a2a;
       display: block;
     }
 
@@ -233,17 +239,17 @@
       margin: 0;
     }
 
-    .proof-stat {
+    .mag-section p.proof-stat {
       font-size: 0.95rem;
       font-family: 'Lora', serif;
       color: #2a2a2a;
       margin: 0;
     }
 
-    .proof-stat-big {
-      font-size: clamp(4.5rem, 12vw, 9rem);
-      font-family: 'Permanent Marker', cursive;
-      font-weight: 400;
+    .mag-section p.proof-stat-big {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 700;
       line-height: 1.05;
       letter-spacing: 0;
       flex: 1;
@@ -251,6 +257,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      margin-top: -20px;
       text-align: center;
     }
 
@@ -282,8 +289,10 @@
         <p class="mag-hero-meta">Data Science &amp; Economics</p>
         <a href="mailto:yimoliu@ufl.edu" class="mag-cta">Contact me <span class="mag-cta-arrow">→</span></a>
       </div>
-      <img src="assets/profile.jpg" alt="Yimo Liu" class="mag-hero-photo"
-           onerror="this.outerHTML='&lt;div class=&quot;mag-hero-photo-placeholder&quot;&gt;photo goes here&lt;/div&gt;'">
+      <div class="mag-hero-photo-wrap">
+        <img src="assets/Headshot_Professional_Square.jpg" alt="Yimo Liu" class="mag-hero-photo"
+             onerror="this.outerHTML='&lt;div class=&quot;mag-hero-photo-placeholder&quot;&gt;photo goes here&lt;/div&gt;'">
+      </div>
     </div>
 
     <!-- Social proof strip -->
@@ -312,8 +321,8 @@
 
         <div class="proof-card">
           <p class="proof-label">Milestone</p>
-          <p class="proof-stat proof-stat-big"><span style="color:#1e3a5f;">Year One</span><br><span style="color:#FA4616;">Done!</span></p>
-          <a href="academics.html" class="mag-cta">View Academics <span class="mag-cta-arrow">→</span></a>
+          <p class="proof-stat proof-stat-big"><span style="color:#1e3a5f;display:block;margin-bottom:0.35em;">Year One</span><span style="color:#FA4616;display:block;">Done!</span></p>
+          <a href="academics.html" class="mag-cta">Academics <span class="mag-cta-arrow">→</span></a>
         </div>
 
       </div>
