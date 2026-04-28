@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yimo Liu</title>
+  <meta name="description" content="Yimo Liu — Data Science & Economics at the University of Florida.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Home-only: hero with photo grid */
+    .mag-hero.home {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .mag-hero.home h1 { font-size: 4.5rem; }
+
+    .mag-hero-photo {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border: 3px solid #2a2a2a;
+      display: block;
+    }
+
+    .mag-hero-photo-placeholder {
+      width: 200px;
+      height: 200px;
+      border: 3px solid #2a2a2a;
+      background: #f0ece0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Lora', serif;
+      font-size: 0.8rem;
+      color: #6b6358;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .mag-hero.home { grid-template-columns: 1fr; }
+      .mag-hero.home h1 { font-size: 3rem; }
+      .mag-hero-photo, .mag-hero-photo-placeholder { width: 90px; height: 90px; }
+    }
+
+    /* ---------- Asymmetric quote grid ---------- */
+
+    .qc-quote {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      font-style: italic;
+      color: #2a2a2a;
+      margin: 0 0 1rem;
+    }
+
+    .qc-cite {
+      display: block;
+      font-family: 'Lora', Georgia, serif;
+      font-style: normal;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #6b6358;
+    }
+    .qc-cite::before { content: "— "; }
+
+    .qgrid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-rows: minmax(80px, auto);
+      gap: 1rem;
+    }
+
+    .qgrid-cell {
+      position: relative;
+      border: 2px solid #2a2a2a;
+      background: #fdfaf2;
+      padding: 1.4rem 1.6rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      transform-origin: center;
+    }
+
+    .qgrid-cell:hover {
+      transform: scale(1.025);
+      box-shadow: 4px 4px 0 #2a2a2a;
+      z-index: 2;
+    }
+
+    .qgrid-cell::before {
+      content: "\201C";
+      position: absolute;
+      top: 0.2rem;
+      left: 0.6rem;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 3.2rem;
+      line-height: 1;
+      color: #2a2a2a;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    .qgrid-cell .qc-quote {
+      font-size: 0.98rem;
+      line-height: 1.55;
+      margin: 0 0 0.8rem;
+    }
+    .qgrid-cell .qc-cite { font-size: 0.7rem; }
+    .qgrid-cell.c-bl .qc-cite,
+    .qgrid-cell.c-br .qc-cite { white-space: nowrap; }
+
+    /* Featured cells get a darker treatment */
+    .qgrid-cell.feature {
+      background: #2a2a2a;
+      color: #fdfaf2;
+    }
+    .qgrid-cell.feature .qc-quote { color: #fdfaf2; }
+    .qgrid-cell.feature .qc-cite { color: #c4b896; }
+    .qgrid-cell.feature::before { color: #fdfaf2; opacity: 0.25; }
+
+    .qgrid-cell.accent {
+      background: #1e3a5f;
+      color: #fdfaf2;
+    }
+    .qgrid-cell.accent .qc-quote { color: #fdfaf2; font-style: normal; font-weight: 600; }
+    .qgrid-cell.accent .qc-cite { color: #c4b896; }
+    .qgrid-cell.accent::before { color: #fdfaf2; opacity: 0.3; }
+
+    .qgrid-cell.gold {
+      background: #c9a14a;
+      border-color: #6b4a14;
+      color: #2a1a05;
+    }
+    .qgrid-cell.gold .qc-quote { color: #2a1a05; }
+    .qgrid-cell.gold .qc-cite  { color: #6b4a14; }
+    .qgrid-cell.gold::before   { color: #6b4a14; opacity: 0.35; }
+
+    /* Asymmetric placement — explicit cell coordinates so the grid packs
+       with no holes. 6 cols × 4 rows. Cell sizes are matched to current
+       quote lengths; rearranging quotes between cells is fine, but
+       resizing cells means re-fitting the text. */
+    .qgrid-cell.c-tl { grid-column: 1 / span 3; grid-row: 1; }            /* top-left */
+    .qgrid-cell.c-tr { grid-column: 4 / span 3; grid-row: 1; }            /* top-right */
+    .qgrid-cell.c-ml { grid-column: 1 / span 4; grid-row: 2 / span 2; }   /* mid-left (large feature) */
+    .qgrid-cell.c-mr { grid-column: 5 / span 2; grid-row: 2 / span 2; }   /* mid-right (tall sidebar) */
+    .qgrid-cell.c-bl { grid-column: 1 / span 4; grid-row: 4; }            /* bottom-left */
+    .qgrid-cell.c-br { grid-column: 5 / span 2; grid-row: 4; }            /* bottom-right */
+
+    @media (max-width: 640px) {
+      .qgrid { grid-template-columns: 1fr; }
+      .qgrid-cell { grid-column: 1 !important; grid-row: auto !important; }
+    }
+
+    /* ---------- Social proof strip ---------- */
+
+    .home-cta-section { padding-bottom: 0; }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 1fr;
+      gap: 1rem;
+    }
+
+    .proof-card {
+      border: 2px solid #2a2a2a;
+      padding: 1.4rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .proof-card .mag-cta {
+      margin-top: auto;
+    }
+
+    .proof-logo-wrap {
+      height: 120px;
+      padding: 0.75rem 0;
+      overflow: hidden;
+    }
+
+    .proof-logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .proof-label {
+      font-family: 'Lora', serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #6b6358;
+      margin: 0 0 0.75rem;
+    }
+
+    .proof-news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+    }
+
+    .proof-news-list li {
+      border-bottom: 1px dashed #c8bfa8;
+      padding: 0.4rem 0;
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
+
+    .proof-news-list li:first-child { padding-top: 0; }
+    .proof-news-list li:last-child { border-bottom: none; }
+
+    .proof-news-list a {
+      color: #2a2a2a;
+      text-decoration: none;
+    }
+
+    .proof-news-list a:hover { color: var(--accent); }
+
+    .proof-placeholder-text {
+      font-size: 0.88rem;
+      color: #c8bfa8;
+      font-style: italic;
+      margin: 0;
+    }
+
+    .proof-stat {
+      font-size: 0.95rem;
+      font-family: 'Lora', serif;
+      color: #2a2a2a;
+      margin: 0;
+    }
+
+    .proof-stat-big {
+      font-size: clamp(4.5rem, 12vw, 9rem);
+      font-family: 'Permanent Marker', cursive;
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+@media (max-width: 640px) {
+      .proof-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="mag">
+
+  <nav class="topnav">
+    <a href="index.html" class="brand">Yimo Liu</a>
+    <ul>
+      <li><a href="index.html" class="navlink active">Home</a></li>
+      <li><a href="news.html" class="navlink">News</a></li>
+      <li><a href="academics.html" class="navlink">Academics</a></li>
+      <li><a href="experience.html" class="navlink">Experience</a></li>
+      <li><a href="projects.html" class="navlink">Projects</a></li>
+      <li><a href="cv.html" class="navlink">CV</a></li>
+    </ul>
+  </nav>
+
+  <div class="mag-wrap">
+
+    <div class="mag-hero home">
+      <div class="mag-hero-text">
+        <p class="mag-eyebrow">University of Florida · Class of 2029</p>
+        <h1>Yimo Liu</h1>
+        <p class="mag-hero-meta">Data Science &amp; Economics</p>
+        <a href="mailto:yimoliu@ufl.edu" class="mag-cta">Contact me <span class="mag-cta-arrow">→</span></a>
+      </div>
+      <img src="assets/profile.jpg" alt="Yimo Liu" class="mag-hero-photo"
+           onerror="this.outerHTML='&lt;div class=&quot;mag-hero-photo-placeholder&quot;&gt;photo goes here&lt;/div&gt;'">
+    </div>
+
+    <!-- Social proof strip -->
+    <div class="mag-section home-proof">
+      <p class="mag-section-label">Highlights</p>
+      <div class="proof-grid">
+
+        <div class="proof-card proof-news">
+          <p class="proof-label">Recent News</p>
+          <ul class="proof-news-list">
+            <li><a href="news.html#dsi">Elected Research Director, DSI</a></li>
+            <li><a href="news.html#ues">Elected VP Career Development, UES</a></li>
+            <li><a href="news.html#sasehacks">Best Finance · SASEHacks 2026</a></li>
+          </ul>
+          <a href="news.html" class="mag-cta">All news <span class="mag-cta-arrow">→</span></a>
+        </div>
+
+        <div class="proof-card">
+          <p class="proof-label">Student Org</p>
+          <p class="proof-stat">Excited to have hosted DSI Symposium with 100+ Attendees!</p>
+          <div class="proof-logo-wrap">
+            <img src="assets/DSI_Logo.png" alt="Data Science & Informatics logo">
+          </div>
+          <a href="https://www.ufdsi.com/symposium/2026" target="_blank" rel="noopener" class="mag-cta">View Here <span class="mag-cta-arrow">→</span></a>
+        </div>
+
+        <div class="proof-card">
+          <p class="proof-label">Milestone</p>
+          <p class="proof-stat proof-stat-big"><span style="color:#1e3a5f;">Year One</span><br><span style="color:#FA4616;">Done!</span></p>
+          <a href="academics.html" class="mag-cta">View Academics <span class="mag-cta-arrow">→</span></a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mag-section">
+      <p class="mag-section-label">About</p>
+      <p>
+        I'm a first-year student at the University of Florida, double-majoring in
+        Data Science (B.S.) and Economics (B.A.).
+        My interests sit at the intersection of the two — econometrics, causal
+        inference, and applied empirical work that turns messy real-world data
+        into decisions.
+      </p>
+    </div>
+
+    <div class="mag-section">
+      <p class="mag-section-label">Quotes</p>
+      <div class="qgrid">
+        <div class="qgrid-cell c-tl">
+          <p class="qc-quote">Audentes Fortuna iuvat.</p>
+          <span class="qc-cite">Virgil, Aeneid (19 BC)</span>
+        </div>
+        <div class="qgrid-cell accent c-tr">
+          <p class="qc-quote">Once more unto the breach, dear friends, once more.</p>
+          <span class="qc-cite">King Henry V, Henry V (c. 1599)</span>
+        </div>
+        <div class="qgrid-cell feature c-ml">
+          <p class="qc-quote">A King may move a man, a father may claim a son. That man can also move himself. And only then does that man truly begin his own game. Remember that howsoever you are played or by whom, your soul is in your keeping alone, even though those who presume to play you be kings or men of power.</p>
+          <span class="qc-cite">King Baldwin IV, Kingdom of Heaven (2005)</span>
+        </div>
+        <div class="qgrid-cell c-mr">
+          <p class="qc-quote">Never less idle than when at leisure, never less alone than when alone.</p>
+          <span class="qc-cite">Scipio Africanus (c. 183 BC)</span>
+        </div>
+        <div class="qgrid-cell c-bl">
+          <p class="qc-quote">For when you gaze long into the abyss, the abyss gazes also into you.</p>
+          <span class="qc-cite">Friedrich Nietzsche, Beyond Good and Evil (1886)</span>
+        </div>
+        <div class="qgrid-cell gold c-br">
+          <p class="qc-quote">There is no free lunch in statistics.</p>
+          <span class="qc-cite">Statistical aphorism</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mag-section">
+      <p class="mag-section-label">What I'm up to</p>
+      <p>
+        I run things for two of UF's biggest student orgs. As
+        Research Director of Data Science &amp; Informatics
+        — UF's 2,000-member data science group — I connect students to
+        on-campus research labs and host sessions on competitive research
+        opportunities. As VP of Career Development for the
+        University Economics Society, I bring in speakers from academia and
+        industry, and I'm spinning up a joint UES × DSI research team for an
+        econ-focused project.
+      </p>
+      <a href="experience.html" class="mag-cta">View experience <span class="mag-cta-arrow">→</span></a>
+    </div>
+
+  </div>
+
+  <footer class="contact">
+    <h2>Contact</h2>
+    <div class="links">
+      <a href="mailto:yimoliu@ufl.edu">yimoliu@ufl.edu</a>
+      <a href="https://www.linkedin.com/in/yimo-liu" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Yimo-Liu-13196" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://devpost.com/yimoliu13196" target="_blank" rel="noopener">Devpost</a>
+    </div>
+    <p class="copyright">© 2026 Yimo Liu</p>
+  </footer>
+
+</body>
+</html>

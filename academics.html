@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academics · Yimo Liu</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Academics-only: school section grid + colored borders */
+
+    /* School section */
+    .mag-school {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 0 3rem;
+      padding: 2.5rem 0 2.5rem 1.5rem;
+      border-bottom: 1px solid #e8e0cc;
+      border-left: 5px solid #e8e0cc;
+    }
+
+    .mag-school:last-child {
+      border-bottom: none;
+    }
+
+    .mag-school.uf {
+      border-left: 5px solid #FA4616;
+      box-shadow: -5px 0 0 #1e3a5f;
+    }
+
+    .mag-school.sickles {
+      border-left: 5px solid #808080;
+      box-shadow: -5px 0 0 #2d6a35;
+    }
+
+    .mag-school.sjhs {
+      border-left: 5px solid #F0C040;
+      box-shadow: -5px 0 0 #1a3a6b;
+    }
+
+    /* Left column — school identity */
+    .mag-school-id {
+      padding-right: 2rem;
+      border-right: 1px solid #e8e0cc;
+    }
+
+    .mag-school-logo {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 0.75rem;
+      mix-blend-mode: multiply;
+    }
+
+    .mag-school-name {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #2a2a2a;
+      margin: 0 0 0.5rem;
+      -webkit-text-stroke: 0.5px currentColor;
+    }
+
+    .mag-school.uf .mag-school-name { color: #1e3a5f; }
+    .mag-school.sickles .mag-school-name { color: #2d6a35; }
+    .mag-school.sjhs .mag-school-name { color: #1a3a6b; }
+
+    .mag-school-years {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.85rem;
+      color: #6b6358;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 1.5rem;
+    }
+
+    .mag-stat {
+      margin-bottom: 1rem;
+    }
+
+    .mag-stat-num {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #FA4616;
+      display: block;
+    }
+
+    .mag-school.sickles .mag-stat-num {
+      color: #808080;
+    }
+
+    .mag-school.sickles .mag-stat-label {
+      color: #2d6a35;
+    }
+
+    .mag-stat-label {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.8rem;
+      color: #1e3a5f;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Right column — course list */
+    .mag-school-content {
+      padding-left: 0;
+    }
+
+    .mag-term {
+      margin-bottom: 1.5rem;
+    }
+
+    .mag-term-label {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #6b6358;
+      border-bottom: 1px solid #e8e0cc;
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .mag-term-label .mag-grade {
+      float: right;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .mag-course-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mag-course-list li {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #2a2a2a;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .mag-course-list li.upcoming {
+      color: #6b6358;
+    }
+
+    .mag-course-code {
+      font-size: 0.75rem;
+      color: #6b6358;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+      width: 4.5rem;
+    }
+
+    .mag-course-list li.upcoming .mag-course-code {
+      color: #aaa;
+    }
+
+    @media (max-width: 640px) {
+      .mag-school { grid-template-columns: 1fr; }
+      .mag-school-id {
+        border-right: none;
+        border-bottom: 1px solid #e8e0cc;
+        padding-right: 0;
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+      .mag-hero h1 { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body class="mag">
+
+  <nav class="topnav">
+    <a href="index.html" class="brand">Yimo Liu</a>
+    <ul>
+      <li><a href="index.html" class="navlink">Home</a></li>
+      <li><a href="news.html" class="navlink">News</a></li>
+      <li><a href="academics.html" class="navlink active">Academics</a></li>
+      <li><a href="experience.html" class="navlink">Experience</a></li>
+      <li><a href="projects.html" class="navlink">Projects</a></li>
+      <li><a href="cv.html" class="navlink">CV</a></li>
+    </ul>
+  </nav>
+
+  <div class="mag-wrap">
+
+    <div class="mag-hero">
+      <h1>Academics</h1>
+      <p class="mag-sub">The journey so far</p>
+    </div>
+
+    <!-- University of Florida -->
+    <div class="mag-school uf">
+      <div class="mag-school-id">
+        <img class="mag-school-logo" src="assets/UF.jpg" alt="University of Florida">
+        <p class="mag-school-name">University of Florida</p>
+        <p class="mag-school-years">2025 – 2029 (expected)</p>
+        <div class="mag-stat">
+          <span class="mag-stat-num">4.0</span>
+          <span class="mag-stat-label">GPA · Freshman Fall</span>
+        </div>
+        <div class="mag-stat">
+          <span class="mag-stat-num">2</span>
+          <span class="mag-stat-label">Majors — Data Science &amp; Economics</span>
+        </div>
+      </div>
+
+      <div class="mag-school-content">
+
+        <div class="mag-term">
+          <div class="mag-term-label">Sophomore Fall <span class="mag-grade">upcoming</span></div>
+          <ul class="mag-course-list">
+            <li class="upcoming"><span class="mag-course-code">ECO3101</span> Intermediate Microeconomics</li>
+            <li class="upcoming"><span class="mag-course-code">STA4210</span> Regression Analysis</li>
+            <li class="upcoming"><span class="mag-course-code">COP3530</span> Data Structures and Algorithm</li>
+            <li class="upcoming"><span class="mag-course-code"></span> TBD</li>
+          </ul>
+        </div>
+
+        <div class="mag-term">
+          <div class="mag-term-label">Sophomore Summer <span class="mag-grade">upcoming</span></div>
+          <ul class="mag-course-list">
+            <li class="upcoming"><span class="mag-course-code">STA4321</span> Introduction to Probability</li>
+            <li class="upcoming"><span class="mag-course-code">STA3100</span> Programming With Data in R</li>
+            <li class="upcoming"><span class="mag-course-code">MAS3114</span> Computational Linear Algebra</li>
+          </ul>
+        </div>
+
+        <div class="mag-term">
+          <div class="mag-term-label">Freshman Spring <span class="mag-grade">grades pending</span></div>
+          <ul class="mag-course-list">
+            <li><span class="mag-course-code">COT3100</span> Applications of Discrete Structures</li>
+            <li><span class="mag-course-code">COP3503C</span> Programming Fundamentals 2</li>
+            <li><span class="mag-course-code">STA2090</span> The Data Analytics Revolution in Sports (QUEST 2)</li>
+            <li><span class="mag-course-code">ARH2000</span> Art Appreciation: American Diversity and Global Arts</li>
+            <li><span class="mag-course-code">MUL2010</span> Experiencing Music</li>
+          </ul>
+        </div>
+
+        <div class="mag-term">
+          <div class="mag-term-label">Freshman Fall <span class="mag-grade">4.0</span></div>
+          <ul class="mag-course-list">
+            <li><span class="mag-course-code">MAC2313</span> Analytic Geometry and Calculus 3</li>
+            <li><span class="mag-course-code">MAD2502</span> Intro to Computational Math</li>
+            <li><span class="mag-course-code">COP3502C</span> Programming Fundamentals 1</li>
+            <li><span class="mag-course-code">ISS1884</span> Capitalism and Its Critics (QUEST 1)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Sickles High School -->
+    <div class="mag-school sickles">
+      <div class="mag-school-id">
+        <img class="mag-school-logo" src="assets/griffin.webp" alt="Sickles High School">
+        <p class="mag-school-name">Sickles High School</p>
+        <p class="mag-school-years">Fall 2022 – Spring 2025</p>
+        <div class="mag-stat">
+          <span class="mag-stat-num">13</span>
+          <span class="mag-stat-label">AP Exams — all scored 5</span>
+        </div>
+        <div class="mag-stat">
+          <span class="mag-stat-num">2×</span>
+          <span class="mag-stat-label">AP Scholar with Distinction</span>
+        </div>
+      </div>
+
+      <div class="mag-school-content">
+
+        <div class="mag-term">
+          <div class="mag-term-label">AP Exams <span class="mag-grade">all 5s</span></div>
+          <ul class="mag-course-list">
+            <li><span class="mag-course-code">AP</span> Calculus AB</li>
+            <li><span class="mag-course-code">AP</span> Calculus BC</li>
+            <li><span class="mag-course-code">AP</span> Physics C: Mechanics</li>
+            <li><span class="mag-course-code">AP</span> Physics C: Electricity &amp; Magnetism</li>
+            <li><span class="mag-course-code">AP</span> Chemistry</li>
+            <li><span class="mag-course-code">AP</span> Biology</li>
+            <li><span class="mag-course-code">AP</span> Statistics</li>
+            <li><span class="mag-course-code">AP</span> Computer Science A</li>
+            <li><span class="mag-course-code">AP</span> Microeconomics</li>
+            <li><span class="mag-course-code">AP</span> Macroeconomics</li>
+            <li><span class="mag-course-code">AP</span> US Government</li>
+            <li><span class="mag-course-code">AP</span> World History</li>
+            <li><span class="mag-course-code">AP</span> Psychology</li>
+          </ul>
+        </div>
+
+        <div class="mag-term">
+          <div class="mag-term-label">Dual Enrollment</div>
+          <ul class="mag-course-list">
+            <li><span class="mag-course-code">ENC1101</span> English Composition 1</li>
+            <li><span class="mag-course-code">ENC1102</span> English Composition 2</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- St. Joseph High School -->
+    <div class="mag-school sjhs">
+      <div class="mag-school-id">
+        <img class="mag-school-logo" src="assets/bear_new.png" alt="St. Joseph High School">
+        <p class="mag-school-name">St. Joseph High School</p>
+        <p class="mag-school-years">Fall 2021 – Spring 2022</p>
+      </div>
+
+      <div class="mag-school-content">
+        <div class="mag-term">
+          <div class="mag-term-label">Dual Enrollment</div>
+          <ul class="mag-course-list">
+            <li><span class="mag-course-code">MATH 130</span> Honors Pre-Calculus</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="contact">
+    <h2>Contact</h2>
+    <div class="links">
+      <a href="mailto:yimoliu@ufl.edu">yimoliu@ufl.edu</a>
+      <a href="https://www.linkedin.com/in/yimo-liu" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Yimo-Liu-13196" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://devpost.com/yimoliu13196" target="_blank" rel="noopener">Devpost</a>
+    </div>
+    <p class="copyright">© 2026 Yimo Liu</p>
+  </footer>
+
+</body>
+</html>

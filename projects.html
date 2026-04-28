@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects · Yimo Liu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="mag">
+
+  <nav class="topnav">
+    <a href="index.html" class="brand">Yimo Liu</a>
+    <ul>
+      <li><a href="index.html" class="navlink">Home</a></li>
+      <li><a href="news.html" class="navlink">News</a></li>
+      <li><a href="academics.html" class="navlink">Academics</a></li>
+      <li><a href="experience.html" class="navlink">Experience</a></li>
+      <li><a href="projects.html" class="navlink active">Projects</a></li>
+      <li><a href="cv.html" class="navlink">CV</a></li>
+    </ul>
+  </nav>
+
+  <div class="mag-wrap">
+
+    <div class="mag-hero">
+      <p class="mag-eyebrow">Selected Work</p>
+      <h1>Projects</h1>
+      <p class="mag-sub">Research &amp; hackathon work</p>
+    </div>
+
+    <div class="mag-section">
+      <p class="mag-section-label">Research</p>
+
+      <div class="entry">
+        <span class="date">Spring 2026 – Present</span>
+        <h3>Assisted Housing Inventory EDA</h3>
+        <p class="meta">UF Stats Club · Project Director</p>
+        <ul>
+          <li>Exploratory analysis on Alachua County's assisted housing inventory (9,200+ data points)</li>
+          <li>Presented first-semester findings in April 2026; continuing into Fall 2026</li>
+        </ul>
+        <div class="stack-list"><strong>Stack:</strong> R, Python</div>
+      </div>
+
+      <div class="entry">
+        <span class="date">April 2026</span>
+        <h3>ASA DataFest 2026 — Patient Length-of-Stay Prediction</h3>
+        <p class="meta">5-person team (assembled &amp; led)</p>
+        <ul>
+          <li>Predicted patient length of stay on Stormont Vail Health data — 7.6M encounters, 950K patients, ~230M total data points</li>
+          <li>Engineered custom <strong>"Journey Depth"</strong> feature capturing diagnosis recurrence; joined multiple tables via DepartmentKey and DiagnosisKey</li>
+          <li>Compared linear regression, random forest (200 trees), and gradient boosting (500 trees)</li>
+          <li>Gradient boosting best: <strong>R² = 0.58, MAE = 46.6 hours</strong></li>
+          <li>Identified admission status as top LOS determinant; neonatology highest mean LOS (234h), cardiology shortest (~13h)</li>
+        </ul>
+        <div class="stack-list"><strong>Stack:</strong> Python, scikit-learn, pandas</div>
+      </div>
+
+      <div class="entry">
+        <span class="date">Aug 2025 – Dec 2025</span>
+        <h3>Federal Reserve and Inflation Control</h3>
+        <p class="meta">Lead author · team of 3</p>
+        <ul>
+          <li>Evaluated effectiveness of the Fed in controlling U.S. inflation over 15+ years (2,600+ data points on Fed Funds Rate and CPI)</li>
+          <li>Designed custom metric using weighted linear regression and multi-variable calculus</li>
+          <li>Produced a 16-page research paper with 6 figures</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mag-section">
+      <p class="mag-section-label">Hackathons</p>
+
+      <div class="entry">
+        <span class="date">2026</span>
+        <h3>CartCoach <span class="award">Best Finance — SASEHacks 2026</span></h3>
+        <p class="meta">Chrome Extension · 24 hours</p>
+        <p>Identifies and reduces impulse buying; builds financial habits via a popup algorithm, automatic ledger fill, spending-breakdown dashboard, real-time savings goals, and an AI financial assistant.</p>
+        <div class="stack-list"><strong>Stack:</strong> Python, TypeScript, FastAPI, MongoDB, Google Gemini API</div>
+      </div>
+
+      <div class="entry">
+        <span class="date">2026</span>
+        <h3>RePlot</h3>
+        <p class="meta">SwampHacks XI · Backend, presentation</p>
+        <p>Identifies infill development opportunities by analyzing urban parcels for redevelopment potential. 100-point scoring system across ROI, Physical Traits, Regulations, and Impact. Environmental metrics based on IPCC Carbon Accounting Standards; excludes public amenities like schools and hospitals.</p>
+        <div class="stack-list"><strong>Stack:</strong> Python, FastAPI, JavaScript, React, Google Gemini (OpenRouter), Google Maps, Mapbox, Node.js</div>
+      </div>
+
+      <div class="entry">
+        <span class="date">2025</span>
+        <h3>TravelBuddy AI <span class="award">Overall 3rd — Gator Hacks IV</span></h3>
+        <p class="meta">48 hours</p>
+        <p>Backend LLM agent using Google Gemini for travel and art recommendations. Photo identification and venue suggestions via Google Vision and Places APIs. Improved LLM response speed by <strong>12%</strong> through prompt engineering and A/B testing.</p>
+        <div class="stack-list"><strong>Stack:</strong> Python, JavaScript, CSS</div>
+      </div>
+
+      <div class="entry">
+        <span class="date">2025</span>
+        <h3>Clinix <span class="award">Best Health — ShellHacks 2025</span></h3>
+        <p class="meta">AI hospital front-desk assistant</p>
+        <p>Streamlines appointment scheduling, medical records retrieval, and insurance cost estimation. Privacy-first architecture: AI only processes generic, non-identifying information — patient data never exposed to the LLM. Secure ID-based record lookup; health chatbot with escalation protocols.</p>
+        <div class="stack-list"><strong>Stack:</strong> Python, FastAPI, React, Tailwind, Google Gemini, Google Sheets/Drive/Calendar APIs. Deployed on Vercel + Render.</div>
+      </div>
+
+      <p style="margin-top:1.5rem;">
+        <a href="https://devpost.com/yimoliu13196" target="_blank" rel="noopener" class="mag-cta">See all on Devpost <span class="mag-cta-arrow">→</span></a>
+        <a href="https://github.com/Yimo-Liu-13196" target="_blank" rel="noopener" class="mag-cta" style="margin-left: 0.5rem;">Code on GitHub <span class="mag-cta-arrow">→</span></a>
+      </p>
+    </div>
+
+  </div>
+
+  <footer class="contact">
+    <h2>Contact</h2>
+    <div class="links">
+      <a href="mailto:yimoliu@ufl.edu">yimoliu@ufl.edu</a>
+      <a href="https://www.linkedin.com/in/yimo-liu" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Yimo-Liu-13196" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://devpost.com/yimoliu13196" target="_blank" rel="noopener">Devpost</a>
+    </div>
+    <p class="copyright">© 2026 Yimo Liu</p>
+  </footer>
+
+</body>
+</html>
