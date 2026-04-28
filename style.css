@@ -834,6 +834,31 @@ body.mag::before { display: none; }
   border-radius: 0;
 }
 
+/* Award tag color variants */
+.mag-section .entry .award-gold {
+  background: #c9a14a;
+  color: #2a1a05;
+  border: 1.5px solid #6b4a14;
+}
+
+.mag-section .entry .award-dsi {
+  background: #0021a5;
+  color: #FA4616;
+  border: 1.5px solid #0021a5;
+}
+
+.mag-section .entry .award-ues {
+  background: #1a3263;
+  color: #fff;
+  border: 1.5px solid #1a3263;
+}
+
+.mag-section .entry .award-statsclub {
+  background: #003087;
+  color: #6ab4e8;
+  border: 1.5px solid #003087;
+}
+
 /* Skill groups (cv) */
 .mag-section .skill-group {
   font-family: 'Lora', Georgia, serif;
