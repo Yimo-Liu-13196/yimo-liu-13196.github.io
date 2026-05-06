@@ -256,8 +256,9 @@ nav.topnav {
 }
 
 nav.topnav .brand {
-  font-family: 'Caveat', cursive;
-  font-size: 1.6rem;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 700;
   line-height: var(--rhythm);
   color: var(--ink);
   text-decoration: none;
