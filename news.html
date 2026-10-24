@@ -5,6 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News · Yimo Liu</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .news-entry { position: relative; }
+
+    /* Linked news titles: no extra bottom padding keeps the visible gap near 2–4px. */
+    .news-entry-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 3px solid rgba(42, 42, 42, 0);
+      transition: border-bottom-color 150ms ease-in-out;
+    }
+
+    .news-entry-link:hover,
+    .news-entry-link:focus-visible {
+      color: inherit;
+      border-bottom-color: var(--ink);
+    }
+
+    .news-entry-link::after {
+      content: "";
+      position: absolute;
+      inset: 0.5rem;
+    }
+
+    .news-entry-link:focus-visible { outline: none; }
+    .news-entry-link:focus-visible::after {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+  </style>
 </head>
 <body class="mag">
 
@@ -30,21 +60,21 @@
 
     <div class="mag-section">
 
-      <div class="entry">
+      <div class="entry news-entry">
         <span class="date">Apr 22, 2026</span>
-        <h3>Presented Assisted Housing Inventory EDA <span class="award award-statsclub">UF Stats Club</span></h3>
-        <p>First-semester findings on 9,200+ data points from Alachua County's assisted housing inventory. Project continues into Fall 2026.</p>
+        <h3><a class="news-entry-link" href="https://github.com/Yimo-Liu-13196/ASA-Club-Spring-2026---AHI-Analysis" target="_blank" rel="noopener" aria-label="Presented Assisted Housing Inventory EDA, opens in a new tab">Presented Assisted Housing Inventory EDA</a></h3>
+        <p>Presented first-semester findings to UF Stats Club on 9,200+ data points from Alachua County's assisted housing inventory. Project continues into Fall 2026.</p>
       </div>
 
       <div class="entry">
         <span class="date">Apr 14, 2026</span>
-        <h3>Elected VP of Career Development, University Economics Society <span class="award award-ues">UES</span></h3>
+        <h3>Elected VP of Career Development, University Economics Society</h3>
         <p>Invited speakers, research symposia, and a new joint UES × DSI undergraduate project team focused on econ-flavored research.</p>
       </div>
 
-      <div class="entry">
+      <div class="entry news-entry">
         <span class="date">Apr 13, 2026</span>
-        <h3>Elected Research Director of Data Science &amp; Informatics (DSI) <span class="award award-dsi">DSI</span></h3>
+        <h3><a class="news-entry-link" href="https://www.ufdsi.com/team" target="_blank" rel="noopener" aria-label="Elected Research Director of Data Science &amp; Informatics (DSI), opens in a new tab">Elected Research Director of Data Science &amp; Informatics (DSI)</a></h3>
         <p>Leading student research initiatives at UF's largest data-science org (2,000+ members). Continuing to build the UF Research Guide connecting students to on-campus labs.</p>
       </div>
 
@@ -54,35 +84,35 @@
         <p>Assembled and led a 5-person team. Engineered a "Journey Depth" feature across 7.6M encounters; gradient boosting hit <strong>R² = 0.58</strong>, MAE = 46.6 hours.</p>
       </div>
 
-      <div class="entry">
+      <div class="entry news-entry">
         <span class="date">Mar 28, 2026</span>
-        <h3>Hosted Annual DSI Symposium <span class="award award-dsi">DSI</span></h3>
+        <h3><a class="news-entry-link" href="https://www.ufdsi.com/symposium/2026" target="_blank" rel="noopener" aria-label="Hosted Annual DSI Symposium, opens in a new tab">Hosted Annual DSI Symposium</a></h3>
         <p>Brought together 100+ students, researchers, and industry experts to discuss data science, AI, and tech. Keynote by Carlos Bastos Neto (Google Cloud), research panel, and industry insights from NLP Logix. Sponsored by NVIDIA, Mark III Systems, and others.</p>
         <img src="assets/DSI_Symposium_Jboard_Group.JPG" alt="DSI Symposium joint board group photo" style="width:100%;display:block;margin-top:1rem;">
       </div>
 
-      <div class="entry">
+      <div class="entry news-entry">
         <span class="date">Mar 8, 2026</span>
-        <h3>CartCoach — Best Finance Project <span class="award award-gold">SASEHacks 2026</span></h3>
-        <p>A Chrome extension that fights impulse buying through a popup algorithm, automatic ledger, spending dashboard, and an AI financial assistant.</p>
+        <h3><a class="news-entry-link" href="https://devpost.com/software/cartcoach" target="_blank" rel="noopener" aria-label="CartCoach — Best Finance Project, opens in a new tab">CartCoach — Best Finance Project</a></h3>
+        <p>At SASEHacks 2026, built a Chrome extension that fights impulse buying through a popup algorithm, automatic ledger, spending dashboard, and an AI financial assistant.</p>
       </div>
 
       <div class="entry">
         <span class="date">Dec 1, 2025</span>
-        <h3>Completed research paper on the Fed &amp; inflation control <span class="award">Class: MAD2502</span></h3>
-        <p>16-page paper (lead author, team of 3) evaluating Fed effectiveness over 15+ years using a custom weighted regression metric.</p>
+        <h3>Completed research paper on the Fed &amp; inflation control</h3>
+        <p>For MAD2502, lead-authored a 16-page paper with a team of 3 evaluating Fed effectiveness over 15+ years using a custom weighted regression metric.</p>
       </div>
 
-      <div class="entry">
+      <div class="entry news-entry">
         <span class="date">Oct 24, 2025</span>
-        <h3>TravelBuddy AI — Overall 3rd Place <span class="award award-gold">Gator Hacks IV</span></h3>
-        <p>Backend LLM agent for travel recommendations using Google Gemini. Improved response speed by <strong>12%</strong> through prompt engineering and A/B testing.</p>
+        <h3><a class="news-entry-link" href="https://www.hackathonparty.com/hackathons/26/projects/332" target="_blank" rel="noopener" aria-label="TravelBuddy AI — Overall 3rd Place, opens in a new tab">TravelBuddy AI — Overall 3rd Place</a></h3>
+        <p>At Gator Hacks IV, built a backend LLM agent for travel recommendations using Google Gemini. Improved response speed by <strong>12%</strong> through prompt engineering and A/B testing.</p>
       </div>
 
-      <div class="entry">
+      <div class="entry news-entry">
         <span class="date">Sep 28, 2025</span>
-        <h3>Clinix — Health Track <span class="award">ShellHacks 2025</span></h3>
-        <p>AI hospital front-desk assistant with a privacy-first architecture: patient data never touches the LLM.</p>
+        <h3><a class="news-entry-link" href="https://devpost.com/software/clinix-69f2n3" target="_blank" rel="noopener" aria-label="Clinix — Health Track, opens in a new tab">Clinix — Health Track</a></h3>
+        <p>At ShellHacks 2025, built an AI hospital front-desk assistant with a privacy-first architecture: patient data never touches the LLM.</p>
       </div>
 
     </div>
