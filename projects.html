@@ -32,26 +32,51 @@
       <p class="mag-section-label">Research</p>
 
       <div class="entry">
-        <span class="date">Spring 2026 – Present</span>
-        <h3>Alachua County Assisted Housing Inventory EDA</h3>
+        <span class="date">Sep 2026 – Present</span>
+        <h3>NVIDIA Basketball Shot Analysis</h3>
+        <p class="meta">Data Science &amp; Informatics · Project Lead</p>
+        <ul>
+          <li>Lead the Data Science and Informatics project team</li>
+          <li>Develop a GPU-accelerated pipeline using NVIDIA Brev to analyze basketball jump-shot quality</li>
+          <li>Use computer vision for player tracking, court-coordinate mapping, and shooter pose estimation to extract spatial-context and body-mechanics features</li>
+          <li>Benchmark tracking against SportsMOT ground truth and compare context-only and pose-augmented expected-make models</li>
+        </ul>
+        <div class="stack-list"><strong>Stack:</strong> NVIDIA Brev, computer vision, sports analytics</div>
+      </div>
+
+      <div class="entry">
+        <span class="date">Sep 2026 – Present</span>
+        <h3>Public University Access &amp; Household Children</h3>
+        <p class="meta">University Economics Society · Project Lead</p>
+        <ul>
+          <li>Lead the University Economics Society project team</li>
+          <li>Analyze 2024 American Community Survey Public Use Microdata Sample data to examine the relationship between household distance to a public university and number of children</li>
+          <li>Investigate geographic and household-level patterns relevant to higher-education access and family outcomes</li>
+        </ul>
+        <div class="stack-list"><strong>Stack:</strong> R, multiple linear regression</div>
+      </div>
+
+      <div class="entry">
+        <span class="date">Mar 2026 – May 2026</span>
+        <h3>Assisted Housing Inventory EDA</h3>
         <p class="meta">UF Stats Club · Project Director</p>
         <ul>
-          <li>Exploratory data analysis on Alachua County's assisted housing inventory (9,200+ data points)</li>
-          <li>Presented first-semester findings in April 2026; continuing into Fall 2026</li>
+          <li>Led the UF Statistics Club project team</li>
+          <li>Conducted exploratory data analysis on Alachua County's assisted housing inventory, analyzing 9,200+ data points to identify trends and socioeconomic relationships</li>
+          <li>Presented Spring 2026 findings to club members on April 22, 2026</li>
         </ul>
-        <div class="stack-list"><strong>Stack:</strong> R, Python</div>
+        <div class="stack-list"><strong>Stack:</strong> Python</div>
       </div>
 
       <div class="entry">
         <span class="date">April 2026</span>
         <h3>ASA DataFest 2026 — Patient Length-of-Stay Prediction</h3>
-        <p class="meta">5-person team (assembled &amp; led)</p>
+        <p class="meta">Stormont Vail Health length-of-stay prediction · 5-person team</p>
         <ul>
-          <li>Predicted patient length of stay on Stormont Vail Health data — 7.6M encounters, 950K patients, ~230M total data points</li>
-          <li>Engineered custom <strong>"Journey Depth"</strong> feature capturing diagnosis recurrence; joined multiple tables via DepartmentKey and DiagnosisKey</li>
-          <li>Compared linear regression, random forest (200 trees), and gradient boosting (500 trees)</li>
-          <li>Gradient boosting best: <strong>R² = 0.58, MAE = 46.6 hours</strong></li>
-          <li>Identified admission status as top LOS determinant; neonatology highest mean LOS (234h), cardiology shortest (~13h)</li>
+          <li>Led a five-person team over 48 hours, predicting length of stay from 7.6M patient encounters across 230M+ total data points</li>
+          <li>Designed a 20-feature modeling approach including the <strong>Journey Depth</strong> metric to capture diagnosis recurrence; applied a log transformation to address heavy right skew in the target variable</li>
+          <li>Compared linear regression, random forest, and gradient boosting models; gradient boosting achieved <strong>R² = 0.58, MAE = 46.6 hours</strong>, outperforming the linear baseline</li>
+          <li>Identified admission status as the single greatest length-of-stay determinant via feature-importance analysis; presented findings and methodological limitations to a statistics faculty and graduate-student panel</li>
         </ul>
         <div class="stack-list"><strong>Stack:</strong> Python, scikit-learn, pandas</div>
       </div>
@@ -61,9 +86,9 @@
         <h3>Federal Reserve and Inflation Control</h3>
         <p class="meta">Lead author · team of 3</p>
         <ul>
-          <li>Evaluated effectiveness of the Fed in controlling U.S. inflation over 15+ years (2,600+ data points on Fed Funds Rate and CPI)</li>
-          <li>Designed custom metric using weighted linear regression and multi-variable calculus</li>
-          <li>Produced a 16-page research paper with 6 figures</li>
+          <li>Lead-authored a 16-page paper with a team of three evaluating the Federal Reserve's effectiveness at controlling U.S. inflation</li>
+          <li>Analyzed 15+ years of Fed Funds Rate and CPI data with 2,600+ data points via exploratory data analysis and inferential statistics</li>
+          <li>Designed a custom responsiveness metric using weighted linear regression and multivariable calculus</li>
         </ul>
       </div>
     </div>
@@ -72,35 +97,53 @@
       <p class="mag-section-label">Hackathons</p>
 
       <div class="entry">
-        <span class="date">2026</span>
+        <span class="date">Mar 2026</span>
         <h3>CartCoach <span class="award award-gold">Best Finance — SASEHacks 2026</span></h3>
-        <p class="meta">Chrome Extension · 24 hours</p>
-        <p>Identifies and reduces impulse buying; builds financial habits via a popup algorithm, automatic ledger fill, spending-breakdown dashboard, real-time savings goals, and an AI financial assistant.</p>
+        <p class="meta">Chrome extension · 24 hours · 4-person team</p>
+        <ul>
+          <li>Designed and built a Chrome extension to identify and reduce impulse buying while building financial habits</li>
+          <li>Developed a FastAPI/MongoDB backend that stores spending history and powers monthly-ledger and purchase tracking</li>
+          <li>Built a dashboard with spending breakdowns, savings-goal tracking, and a Gemini-powered financial assistant</li>
+          <li>Led a four-person team over 24 hours</li>
+        </ul>
         <div class="stack-list"><strong>Stack:</strong> Python, TypeScript, FastAPI, MongoDB, Google Gemini API</div>
       </div>
 
       <div class="entry">
-        <span class="date">2026</span>
+        <span class="date">Jan 2026</span>
         <h3>RePlot</h3>
-        <p class="meta">SwampHacks XI · Backend, presentation</p>
-        <p>Identifies infill development opportunities by analyzing urban parcels for redevelopment potential. 100-point scoring system across ROI, Physical Traits, Regulations, and Impact. Environmental metrics based on IPCC Carbon Accounting Standards; excludes public amenities like schools and hospitals.</p>
+        <p class="meta">SwampHacks XI · Backend and presentation</p>
+        <ul>
+          <li>Built the backend and led the presentation for an urban infill-development tool that analyzes land for redevelopment potential</li>
+          <li>Designed a 100-point scoring system across ROI, physical traits, regulations, and community impact</li>
+          <li>Integrated Google Gemini for per-parcel analysis, excluded public amenities through custom logic, and incorporated IPCC Carbon Accounting Standards for environmental-impact metrics</li>
+        </ul>
         <div class="stack-list"><strong>Stack:</strong> Python, FastAPI, JavaScript, React, Google Gemini (OpenRouter), Google Maps, Mapbox, Node.js</div>
       </div>
 
       <div class="entry">
-        <span class="date">2025</span>
+        <span class="date">Oct 2025</span>
         <h3>TravelBuddy AI <span class="award award-gold">Overall 3rd — Gator Hacks IV</span></h3>
-        <p class="meta">48 hours</p>
-        <p>Backend LLM agent using Google Gemini for travel and art recommendations. Photo identification and venue suggestions via Google Vision and Places APIs. Improved LLM response speed by <strong>12%</strong> through prompt engineering and A/B testing.</p>
-        <div class="stack-list"><strong>Stack:</strong> Python, JavaScript, CSS</div>
+        <p class="meta">48 hours · 3-person team</p>
+        <ul>
+          <li>Built a backend LLM agent using the Google Gemini API to generate travel and art recommendations</li>
+          <li>Improved LLM response speed by <strong>12%</strong> through prompt engineering and A/B testing</li>
+          <li>Led a three-person team across project planning, API integration, and presentation</li>
+        </ul>
+        <div class="stack-list"><strong>Stack:</strong> Python, Google Gemini, Vision AI, Places API</div>
       </div>
 
       <div class="entry">
-        <span class="date">2025</span>
+        <span class="date">Sep 2025</span>
         <h3>Clinix</h3>
-        <p class="meta">AI hospital front-desk assistant</p>
-        <p>Streamlines appointment scheduling, medical records retrieval, and insurance cost estimation. Privacy-first architecture: AI only processes generic, non-identifying information — patient data never exposed to the LLM. Secure ID-based record lookup; health chatbot with escalation protocols.</p>
-        <div class="stack-list"><strong>Stack:</strong> Python, FastAPI, React, Tailwind, Google Gemini, Google Sheets/Drive/Calendar APIs. Deployed on Vercel + Render.</div>
+        <p class="meta">ShellHacks 2025 · AI hospital front-desk assistant · 3-person team</p>
+        <ul>
+          <li>Developed an AI-powered hospital front-desk assistant for appointment scheduling, medical-record retrieval, and insurance-cost estimation</li>
+          <li>Designed a privacy-first architecture where patient data is never exposed to the LLM</li>
+          <li>Integrated the backend with Google Sheets, Calendar, and web retrieval; deployed on Vercel and Render</li>
+          <li>Led a three-person team over 36 hours</li>
+        </ul>
+        <div class="stack-list"><strong>Stack:</strong> Python, FastAPI, React, Google Gemini, Tailwind CSS</div>
       </div>
 
       <p style="margin-top:1.5rem;">
@@ -114,7 +157,7 @@
   <footer class="contact">
     <h2>Contact</h2>
     <div class="links">
-      <a href="mailto:yimoliu@ufl.edu">yimoliu@ufl.edu</a>
+      <a href="mailto:yimoliu13196@gmail.com">yimoliu13196@gmail.com</a>
       <a href="https://www.linkedin.com/in/yimo-liu" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/Yimo-Liu-13196" target="_blank" rel="noopener">GitHub</a>
       <a href="https://devpost.com/yimoliu13196" target="_blank" rel="noopener">Devpost</a>
